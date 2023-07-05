@@ -38,6 +38,7 @@ buttonVerify.addEventListener("click", function () {
 
     if (emailFound === true) {
         document.getElementById("validation-answer").innerHTML = `La tua e-mail è valida`;
+        titleDanger.classList.remove("text-danger");
     } else {
         document.getElementById("validation-answer").innerHTML = `La tua e-mail non è valida`;
         titleDanger.classList.add("text-danger");
