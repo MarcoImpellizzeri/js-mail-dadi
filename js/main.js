@@ -7,10 +7,14 @@ Usiamo un input in html per inserire la mail da cercare.
 */ 
 
 // creo una costante dell'email dell'user
-const userEmail = document.getElementById("usere-email");
-// creo un array con tutte le mail conosciute 
-const allEmail = ["gio@g.com", "vane@g.com", "marco@g.com", "luigi@g.com"];
-// un ciclo for per confrontora le mail conosciute con quella inserita
-for (i = 0; i < allEmail; i++) {
-    console.log()
-}
+const userEmailInputElement = document.querySelector("#usere-email");
+// creo una costante per il button 
+const buttonVerify = document.querySelector("#btn-verify")
+
+// con ".addEventListener" faccio si che quando premo il mio butto "buttonVerify"
+// agisce facendo un print in console della mail che inserisco
+buttonVerify.addEventListener("click", function () {
+    let userEmail = userEmailInputElement.value
+
+    console.log(userEmail)
+})
