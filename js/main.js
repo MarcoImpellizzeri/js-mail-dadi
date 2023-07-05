@@ -21,22 +21,29 @@ const allEmail = ["vane@g.com", "luigi@g.com", "piero@g.com", "marco@g.com"];
 buttonVerify.addEventListener("click", function () {
     let userEmail = userEmailInputElement.value;
     const mailVerification = userEmail;
-    
+    // creo la costante per cambiare colore alla validation 
+    const titleDanger = document.querySelector("#validation-answer");
+    // creo una variabile per far si che la condizione sia false
+    let emailFound = false;
+
     // creo un ciclo for per verificare se la mia mail si trova all'interno
     // del mi array, quindi controllo che sia valida
     for (let i = 0; i < allEmail.length; i++) {
         const currentEmail = allEmail[i];
-        const titleDenger = document.getElementById("validation-answer");
 
         if (currentEmail === mailVerification) {
-            document.getElementById("validation-answer").innerHTML = `La tua e-mail è valida`;
-        } else {
-            document.getElementById("validation-answer").innerHTML = `La tua e-mail non è valida`;
-            titleDenger.classList.add("text-danger");
+            emailFound = true;
         }
+    }
+
+    if (emailFound === true) {
+        document.getElementById("validation-answer").innerHTML = `La tua e-mail è valida`;
+    } else {
+        document.getElementById("validation-answer").innerHTML = `La tua e-mail non è valida`;
+        titleDanger.classList.add("text-danger");
     }
 })
 
-buttonReload.addEventListener("click", function(){
+buttonReload.addEventListener("click", function () {
     location.reload();
 })
